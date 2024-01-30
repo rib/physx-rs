@@ -607,9 +607,9 @@ fn main() {
 
         if target == "x86_64-pc-windows-msvc" {
             include.push(target);
-        } else if target.contains("-linux-") || target.ends_with("apple-darwin") {
+        } else if std::env::var("CARGO_CFG_TARGET_FAMILY").unwrap() == "unix" {
             // Note that (currently) the x86_64 and aarch64 structures we bind
-            // are the exact same for linux/android and MacOS (unsure about iOS, but also don't care)
+            // are the exact same for linux/android/MacOS/iOS
             include.push("unix");
         } else {
             panic!("unknown TARGET triple '{}'", target);

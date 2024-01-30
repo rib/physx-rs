@@ -179,6 +179,9 @@ include!("generated/unix/structgen.rs");
 ))]
 include!("generated/unix/structgen.rs");
 
+#[cfg(all(not(feature = "structgen"), target_os = "ios", target_arch = "aarch64",))]
+include!("generated/unix/structgen.rs");
+
 #[cfg(all(
     not(feature = "structgen"),
     target_os = "windows",
