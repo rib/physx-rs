@@ -6,7 +6,7 @@ using namespace physx;
 #define unsafe_offsetof(st, m) ((size_t) ( (char *)&((st *)(0))->m - (char *)0 ))
 #include "structgen.hpp"
 
-int main() {
+extern "C" int structgen_main() {
     PodStructGen sg;
     sg.pass_thru("struct physx_PxAllocatorCallback_Pod;\n");
     sg.pass_thru("struct physx_PxErrorCallback_Pod;\n");

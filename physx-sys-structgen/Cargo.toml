@@ -1,0 +1,17 @@
+[package]
+name = "physx-sys-structgen"
+description = "Physx Structgen"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+dirs = "5"
+
+[build-dependencies]
+cc = { version = "1.0", features = ["parallel"] }
+
+[package.metadata.bundle]
+name = "physx-sys-structgen"
+identifier = "physx.rust.structgen"
+version = "1.0.0"
+short_description = "Physx Structgen"
